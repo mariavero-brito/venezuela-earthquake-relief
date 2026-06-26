@@ -123,32 +123,6 @@
     }
     .card-title i { color: var(--blue); font-size: 1.25rem; }
 
-    /* DISCLAIMER */
-    .disclaimer {
-      background: #fff1f2;
-      border: 2px solid #fca5a5;
-      border-radius: 16px;
-      padding: 1.75rem 2rem;
-    }
-    .disclaimer-head {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #b91c1c;
-      margin-bottom: 0.85rem;
-    }
-    .disclaimer-head i { font-size: 1.1rem; }
-    .disclaimer p {
-      font-size: 0.97rem;
-      color: #7f1d1d;
-      line-height: 1.65;
-    }
-    .disclaimer strong { color: #991b1b; }
-
     /* NEWS */
     .news-link {
       display: flex;
@@ -305,20 +279,22 @@
     .school-row a:hover { text-decoration: underline; }
 
     /* HOW TO HELP */
-    .help-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-    @media (max-width: 580px) {
-      .help-grid { grid-template-columns: 1fr; }
-    }
     .help-item {
       background: #f9fafb;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.35rem 1.2rem;
+    }
+    .help-item--donate {
+      margin-bottom: 1rem;
+    }
+    .help-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) {
+      .help-row { grid-template-columns: 1fr; }
     }
     .help-item-icon {
       width: 40px;
@@ -340,7 +316,7 @@
     .help-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
     .help-item a { color: var(--blue); font-weight: 600; text-decoration: none; }
     .help-item a:hover { text-decoration: underline; }
-    .help-item .badge-local {
+    .badge-local {
       display: inline-block;
       background: #fffbeb;
       border: 1px solid #fcd34d;
@@ -393,7 +369,6 @@
 
     @media (max-width: 500px) {
       .card { padding: 1.4rem; }
-      .disclaimer { padding: 1.4rem; }
     }
   </style>
 </head>
@@ -430,33 +405,58 @@
 
 <main>
 
-  <!-- TILT DISCLAIMER -->
-  <div class="disclaimer">
-    <div class="disclaimer-head">
-      <i class="bi bi-exclamation-triangle-fill"></i>
-      Important Disclaimer
-    </div>
-    <p>
-      <strong>Tilt is not affiliated with, endorsing, or sponsoring this relief drive.</strong>
-      This campaign is independently organized by members of the Victory Martial Arts &ndash; Hunters Creek parent community.
-      Tilt does not collect, manage, or distribute any donated funds or physical goods.
-      All Venmo donations go directly to the individual organizer for purchasing and shipping relief supplies to Venezuela.
-    </p>
-  </div>
-
-  <!-- IN THE NEWS -->
+  <!-- THREE WAYS TO HELP -->
   <div class="card">
-    <div class="card-eyebrow">Coverage</div>
-    <div class="card-title"><i class="bi bi-newspaper"></i> In the News</div>
-    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1rem;">The earthquake has been covered extensively by major U.S. news outlets.</p>
-    <a class="news-link" href="https://www.cnn.com/search?q=venezuela+earthquake" target="_blank" rel="noopener">
-      <div class="news-icon-box"><i class="bi bi-broadcast"></i></div>
-      <div class="news-text">
-        <strong>CNN &mdash; Venezuela Earthquake Coverage</strong>
-        <span>cnn.com &bull; Latest reporting and updates</span>
+    <div class="card-eyebrow">Three Ways to Help</div>
+    <div class="card-title"><i class="bi bi-hand-thumbs-up"></i> How to Contribute</div>
+    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1.5rem;">
+      Supplies must arrive by <strong>Sunday, June 29</strong>. Everything collected ships Monday morning at no extra cost.
+    </p>
+
+    <!-- Option 1: Donate Money (full-width, with Venmo) -->
+    <div class="help-item help-item--donate">
+      <div class="help-item-icon"><i class="bi bi-heart"></i></div>
+      <h3>1. Donate Money</h3>
+      <p style="margin-bottom:1.25rem;">100% of your donation goes toward purchasing and shipping supplies. No fees, no middlemen.</p>
+      <div class="donate-center">
+        <a class="btn-venmo" href="https://venmo.com/code?user_id=3334742254551040747&created=1782442167" target="_blank" rel="noopener">
+          <i class="bi bi-arrow-right-circle-fill"></i>
+          Donate on Venmo
+        </a>
+        <div class="transparency-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>All receipts will be posted to this page after purchases are made this weekend so you can see exactly where your money went.</span>
+        </div>
       </div>
-      <div class="news-arrow"><i class="bi bi-arrow-up-right"></i></div>
-    </a>
+    </div>
+
+    <div class="help-row">
+
+      <!-- Option 2: Ship Items -->
+      <div class="help-item">
+        <div class="help-item-icon"><i class="bi bi-truck"></i></div>
+        <h3>2. Ship Items to Me</h3>
+        <p>
+          Text me and I will send you my home address. I will personally deliver everything to the school.<br><br>
+          <a href="sms:3213375985">Text 321-337-5985</a>
+        </p>
+      </div>
+
+      <!-- Option 3: Drop Off -->
+      <div class="help-item">
+        <div class="help-item-icon"><i class="bi bi-geo-alt"></i></div>
+        <span class="badge-local">Orlando, FL locals only</span>
+        <h3>3. Drop Off In Person</h3>
+        <p>
+          <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a><br>
+          13938 Egret Tower Drive<br>
+          Orlando, FL 32837<br><br>
+          Text me to arrange a drop-off time.<br>
+          <a href="sms:3213375985">Text 321-337-5985</a>
+        </p>
+      </div>
+
+    </div>
   </div>
 
   <!-- FLYER -->
@@ -464,23 +464,6 @@
     <div class="card-eyebrow">About This Drive</div>
     <div class="flyer-wrap">
       <img src="flyer.jpg" alt="Victory Martial Arts Venezuela Earthquake Relief Flyer">
-    </div>
-  </div>
-
-  <!-- DONATE -->
-  <div class="card">
-    <div class="card-eyebrow">Support the Relief Effort</div>
-    <div class="card-title"><i class="bi bi-heart"></i> Donate via Venmo</div>
-    <div class="donate-center">
-      <p>100% of your donation goes toward purchasing needed supplies. No fees, no middlemen.</p>
-      <a class="btn-venmo" href="https://venmo.com/code?user_id=3334742254551040747&created=1782442167" target="_blank" rel="noopener">
-        <i class="bi bi-arrow-right-circle-fill"></i>
-        Donate on Venmo
-      </a>
-      <div class="transparency-box">
-        <i class="bi bi-check-circle-fill"></i>
-        <span>All receipts will be posted to this page after purchases are made this weekend so you can see exactly where your money went.</span>
-      </div>
     </div>
   </div>
 
@@ -504,43 +487,6 @@
       <div class="item-chip"><i class="bi bi-bucket"></i> Cleaning Supplies</div>
     </div>
     <p class="items-note">Have something not on this list? Reach out &mdash; every bit helps.</p>
-  </div>
-
-  <!-- HOW TO HELP -->
-  <div class="card">
-    <div class="card-eyebrow">Three Ways to Help</div>
-    <div class="card-title"><i class="bi bi-hand-thumbs-up"></i> How to Contribute</div>
-    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1.25rem;">
-      Supplies must arrive by <strong>Sunday, June 29</strong>. Everything collected ships Monday morning at no extra cost.
-    </p>
-    <div class="help-grid">
-
-      <div class="help-item">
-        <div class="help-item-icon"><i class="bi bi-phone"></i></div>
-        <h3>Donate Money</h3>
-        <p>Send any amount via Venmo. 100% goes toward purchasing and shipping supplies.</p>
-      </div>
-
-      <div class="help-item">
-        <div class="help-item-icon"><i class="bi bi-truck"></i></div>
-        <h3>Ship Items to Me</h3>
-        <p>
-          Text me and I will send you my home address. I will personally deliver everything to the school.<br><br>
-          <a href="sms:3213375985">Text 321-337-5985</a>
-        </p>
-      </div>
-
-      <div class="help-item">
-        <div class="help-item-icon"><i class="bi bi-geo-alt"></i></div>
-        <span class="badge-local">Orlando, FL locals only</span>
-        <h3>Drop Off In Person</h3>
-        <p>
-          Text me to arrange a drop-off time and location.<br><br>
-          <a href="sms:3213375985">Text 321-337-5985</a>
-        </p>
-      </div>
-
-    </div>
   </div>
 
   <!-- SCHOOL REFERENCE -->
@@ -571,10 +517,24 @@
     </div>
   </div>
 
+  <!-- IN THE NEWS -->
+  <div class="card">
+    <div class="card-eyebrow">Coverage</div>
+    <div class="card-title"><i class="bi bi-newspaper"></i> In the News</div>
+    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1rem;">The earthquake has been covered extensively by major U.S. news outlets.</p>
+    <a class="news-link" href="https://www.cnn.com/search?q=venezuela+earthquake" target="_blank" rel="noopener">
+      <div class="news-icon-box"><i class="bi bi-broadcast"></i></div>
+      <div class="news-text">
+        <strong>CNN &mdash; Venezuela Earthquake Coverage</strong>
+        <span>cnn.com &bull; Latest reporting and updates</span>
+      </div>
+      <div class="news-arrow"><i class="bi bi-arrow-up-right"></i></div>
+    </a>
+  </div>
+
 </main>
 
 <footer>
-  <p>Organized by the <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a> community &bull; Orlando, FL</p>
   <p>Questions? Text <a href="sms:3213375985">321-337-5985</a></p>
   <div class="footer-disclaimer">
     Tilt is not affiliated with this relief drive. All donations are independently organized by the community. Tilt does not collect or manage any funds.
