@@ -304,47 +304,53 @@
     }
     .school-row a:hover { text-decoration: underline; }
 
-    /* DROP-OFF */
-    .no-ship-warning {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-      margin: 1rem 0;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 10px;
-      padding: 0.85rem 1.1rem;
-      font-size: 0.9rem;
-      color: #78350f;
-    }
-    .no-ship-warning i { flex-shrink: 0; margin-top: 0.1rem; }
-    .dropoff-grid {
+    /* HOW TO HELP */
+    .help-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
-    @media (max-width: 520px) {
-      .dropoff-grid { grid-template-columns: 1fr; }
+    @media (max-width: 580px) {
+      .help-grid { grid-template-columns: 1fr; }
     }
-    .dropoff-item {
+    .help-item {
       background: #f9fafb;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.25rem;
+      padding: 1.35rem 1.2rem;
     }
-    .dropoff-item h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
+    .help-item-icon {
+      width: 40px;
+      height: 40px;
+      background: #eff6ff;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: var(--blue);
+      margin-bottom: 0.85rem;
     }
-    .dropoff-item h3 i { color: var(--blue); }
-    .dropoff-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-    .dropoff-item a { color: var(--blue); font-weight: 600; text-decoration: none; }
-    .dropoff-item a:hover { text-decoration: underline; }
+    .help-item h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .help-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .help-item a { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .help-item a:hover { text-decoration: underline; }
+    .help-item .badge-local {
+      display: inline-block;
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      color: #78350f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
 
     /* RECEIPTS */
     .receipts-empty {
@@ -471,7 +477,6 @@
         <i class="bi bi-arrow-right-circle-fill"></i>
         Donate on Venmo
       </a>
-      <span class="venmo-handle">@mariavero-brito &bull; Tap on mobile to open the Venmo app</span>
       <div class="transparency-box">
         <i class="bi bi-check-circle-fill"></i>
         <span>All receipts will be posted to this page after purchases are made this weekend so you can see exactly where your money went.</span>
@@ -501,9 +506,46 @@
     <p class="items-note">Have something not on this list? Reach out &mdash; every bit helps.</p>
   </div>
 
-  <!-- ORGANIZING SCHOOL -->
+  <!-- HOW TO HELP -->
   <div class="card">
-    <div class="card-eyebrow">Organizer</div>
+    <div class="card-eyebrow">Three Ways to Help</div>
+    <div class="card-title"><i class="bi bi-hand-thumbs-up"></i> How to Contribute</div>
+    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1.25rem;">
+      Supplies must arrive by <strong>Sunday, June 29</strong>. Everything collected ships Monday morning at no extra cost.
+    </p>
+    <div class="help-grid">
+
+      <div class="help-item">
+        <div class="help-item-icon"><i class="bi bi-phone"></i></div>
+        <h3>Donate Money</h3>
+        <p>Send any amount via Venmo. 100% goes toward purchasing and shipping supplies.</p>
+      </div>
+
+      <div class="help-item">
+        <div class="help-item-icon"><i class="bi bi-truck"></i></div>
+        <h3>Ship Items to Me</h3>
+        <p>
+          Text me and I will send you my home address. I will personally deliver everything to the school.<br><br>
+          <a href="sms:3213375985">Text 321-337-5985</a>
+        </p>
+      </div>
+
+      <div class="help-item">
+        <div class="help-item-icon"><i class="bi bi-geo-alt"></i></div>
+        <span class="badge-local">Orlando, FL locals only</span>
+        <h3>Drop Off In Person</h3>
+        <p>
+          Text me to arrange a drop-off time and location.<br><br>
+          <a href="sms:3213375985">Text 321-337-5985</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCHOOL REFERENCE -->
+  <div class="card">
+    <div class="card-eyebrow">Verified Organizer</div>
     <div class="card-title"><i class="bi bi-shield-check"></i> About This Community</div>
     <div class="school-row">
       <div class="school-icon"><i class="bi bi-building"></i></div>
@@ -513,37 +555,6 @@
           This relief drive is organized by parents of the<br>
           <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a> community<br>
           13938 Egret Tower Drive, Orlando, FL 32837
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- DROP-OFF PHYSICAL ITEMS -->
-  <div class="card">
-    <div class="card-eyebrow">Physical Donations</div>
-    <div class="card-title"><i class="bi bi-geo-alt"></i> Drop Off In Person</div>
-    <p style="font-size:0.95rem; color:var(--muted);">
-      Physical items must be delivered by <strong>Sunday, June 29</strong>. All collected supplies will be shipped Monday morning at no additional cost.
-    </p>
-    <div class="no-ship-warning">
-      <i class="bi bi-info-circle-fill"></i>
-      <span><strong>Do not ship or mail packages to the school.</strong> In-person drop-off only — please do not send anything via FedEx, UPS, USPS, or any courier service to this address.</span>
-    </div>
-    <div class="dropoff-grid">
-      <div class="dropoff-item">
-        <h3><i class="bi bi-building"></i> Victory Martial Arts</h3>
-        <p>
-          13938 Egret Tower Drive<br>
-          Orlando, FL 32837<br><br>
-          Check school hours before dropping off.
-        </p>
-      </div>
-      <div class="dropoff-item">
-        <h3><i class="bi bi-house"></i> Home Drop-Off</h3>
-        <p>
-          Need a more flexible option? Call or text to arrange:<br><br>
-          <a href="tel:3213375985">321-337-5985</a><br><br>
-          Text or call and we will share the address.
         </p>
       </div>
     </div>
@@ -564,7 +575,7 @@
 
 <footer>
   <p>Organized by the <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a> community &bull; Orlando, FL</p>
-  <p>Questions? Call or text <a href="tel:3213375985">321-337-5985</a></p>
+  <p>Questions? Text <a href="sms:3213375985">321-337-5985</a></p>
   <div class="footer-disclaimer">
     Tilt is not affiliated with this relief drive. All donations are independently organized by the community. Tilt does not collect or manage any funds.
   </div>
