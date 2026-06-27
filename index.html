@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venezuela Earthquake Relief Drive</title>
+  <title>Venezuela Earthquake Relief</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,10 +11,10 @@
   <style>
     :root {
       --red:    #CF142B;
-      --gold:   #F4D000;
+      --gold:   #F4C000;
       --blue:   #003DA5;
       --dark:   #111827;
-      --light:  #f5f5f5;
+      --light:  #f7f8fa;
       --card:   #ffffff;
       --border: #e5e7eb;
       --text:   #111827;
@@ -31,512 +31,564 @@
       font-size: 16px;
     }
 
-    /* HEADER */
-    header {
-      background: #fff;
+    /* ── Top disclaimer banner ── */
+    .top-banner {
+      background: #1e293b;
+      color: #cbd5e1;
       text-align: center;
-      padding: 2.75rem 1.5rem 2.25rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 7px 20px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: #fff;
       border-bottom: 1px solid var(--border);
+      padding: 48px 20px 40px;
+      text-align: center;
     }
 
     .flag-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .flag-wrap svg {
-      width: 200px;
-      height: 133px;
+      display: inline-block;
+      width: 80px;
+      height: 53px;
       border-radius: 6px;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.18);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
     }
 
-    header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 800;
-      letter-spacing: -0.75px;
-      line-height: 1.15;
       color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
-    header h1 em {
-      font-style: normal;
-      color: var(--red);
-    }
-    header .sub {
-      margin-top: 0.75rem;
-      font-size: 1.05rem;
+
+    .hero .subtitle {
       color: var(--muted);
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 520px;
+      margin: 0 auto 28px;
     }
-    /* MAIN */
-    main {
+
+    .btn-gofundme {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #02a95c;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 2px 12px rgba(2,169,92,0.25);
+    }
+    .btn-gofundme:hover { background: #019150; transform: translateY(-1px); }
+
+    .gf-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .stat {
+      flex: 1;
+      max-width: 180px;
+      text-align: center;
+      padding: 20px 12px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    /* ── Section wrapper ── */
+    .section {
       max-width: 780px;
       margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
+      padding: 48px 20px;
     }
 
-    /* CARDS */
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      border: 1px solid var(--border);
-    }
-
-    .card-eyebrow {
-      font-size: 0.75rem;
+    .section-title {
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title i { color: var(--blue); font-size: 1.1rem; }
+
+    .section-sub {
       color: var(--muted);
-      margin-bottom: 0.4rem;
+      font-size: 0.875rem;
+      margin-bottom: 24px;
     }
 
-    .card-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
+    /* ── Photo gallery ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
     }
-    .card-title i { color: var(--blue); font-size: 1.25rem; }
 
-    /* NEWS */
-    .news-link {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
+    .photo-card {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      text-decoration: none;
-      color: var(--dark);
-      transition: background 0.18s;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
-    .news-link:hover { background: #dbeafe; }
-    .news-icon-box {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      background: var(--blue);
-      color: #fff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-    .news-text strong { display: block; font-size: 0.97rem; font-weight: 700; }
-    .news-text span { font-size: 0.85rem; color: var(--muted); }
-    .news-arrow { margin-left: auto; color: var(--muted); font-size: 1.1rem; }
 
-    /* FLYER */
-    .flyer-wrap img {
+    .photo-card img {
       width: 100%;
-      border-radius: 10px;
+      height: 260px;
+      object-fit: cover;
       display: block;
     }
 
-    /* DONATE */
-    .donate-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
-    }
-    .donate-center > p {
-      font-size: 0.97rem;
+    .photo-caption {
+      padding: 10px 14px 12px;
+      font-size: 0.8rem;
       color: var(--muted);
-      max-width: 460px;
-    }
-    .btn-venmo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      background: #008CFF;
-      color: #fff;
-      font-family: inherit;
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 0.9rem 2.25rem;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(0,140,255,0.32);
-      transition: background 0.18s, transform 0.15s, box-shadow 0.15s;
-    }
-    .btn-venmo:hover {
-      background: #0070cc;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(0,140,255,0.4);
-    }
-    .venmo-handle {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-    .transparency-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      border-radius: 10px;
-      padding: 0.9rem 1.2rem;
-      font-size: 0.92rem;
-      color: #166534;
-      text-align: left;
-      width: 100%;
-      max-width: 500px;
-    }
-    .transparency-box i { flex-shrink: 0; font-size: 1.1rem; margin-top: 0.1rem; }
-
-    /* ITEMS GRID */
-    .items-intro {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-    .items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
-      gap: 0.65rem;
-    }
-    .item-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 0.65rem 0.9rem;
-      font-size: 0.9rem;
       font-weight: 500;
     }
-    .item-chip i { color: var(--blue); font-size: 1rem; flex-shrink: 0; }
-    .items-note {
-      margin-top: 1rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      font-style: italic;
-    }
 
-    /* SCHOOL ORGANIZER */
-    .school-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-    }
-    .school-icon {
-      flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      background: #eff6ff;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: var(--blue);
-    }
-    .school-row h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-    .school-row p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-    .school-row a {
-      color: var(--blue);
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .school-row a:hover { text-decoration: underline; }
-
-    /* HOW TO HELP */
-    .help-item {
-      background: #f9fafb;
+    /* ── Receipts ── */
+    .receipt-card {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.35rem 1.2rem;
-    }
-    .help-item--donate {
-      margin-bottom: 1rem;
-    }
-    .help-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    @media (max-width: 520px) {
-      .help-row { grid-template-columns: 1fr; }
-    }
-    .help-item-icon {
-      width: 40px;
-      height: 40px;
-      background: #eff6ff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.15rem;
-      color: var(--blue);
-      margin-bottom: 0.85rem;
-    }
-    .help-item h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .help-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-    .help-item a { color: var(--blue); font-weight: 600; text-decoration: none; }
-    .help-item a:hover { text-decoration: underline; }
-    .help-item .btn-venmo { color: #fff; }
-    .help-item .btn-venmo:hover { color: #fff; }
-    .badge-local {
-      display: inline-block;
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      color: #78350f;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.15rem 0.55rem;
-      border-radius: 20px;
-      margin-bottom: 0.5rem;
+      border-radius: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      overflow: hidden;
+      margin-bottom: 16px;
     }
 
-    /* RECEIPTS */
-    .receipts-empty {
-      text-align: center;
-      padding: 2.5rem 1rem;
-    }
-    .receipt-icon {
-      width: 64px;
-      height: 64px;
-      background: #f3f4f6;
-      border-radius: 50%;
+    .receipt-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      font-size: 1.75rem;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .receipt-store {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .store-badge {
+      background: #0071CE;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .receipt-date {
+      font-size: 0.8rem;
       color: var(--muted);
+      font-weight: 500;
     }
-    .receipts-empty p { font-size: 0.95rem; color: var(--muted); }
-    .receipts-empty strong { color: var(--dark); display: block; margin-bottom: 0.4rem; font-size: 1rem; }
 
-    /* FOOTER */
+    .receipt-total {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .receipt-items {
+      padding: 14px 20px;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .item-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.855rem;
+      color: #374151;
+      padding: 4px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .item-list li:last-child { border-bottom: none; }
+
+    .item-name { flex: 1; }
+    .item-qty {
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+    .item-price {
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    .receipt-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .savings-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #059669;
+      background: #d1fae5;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .btn-receipt {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 7px 14px;
+      border: 1.5px solid var(--blue);
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-receipt:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── Footer ── */
     footer {
       background: var(--dark);
-      color: #9ca3af;
+      color: #94a3b8;
       text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.875rem;
-      line-height: 1.9;
-    }
-    footer a { color: #d1d5db; text-decoration: none; }
-    footer a:hover { color: #fff; }
-    /* TOP DISCLAIMER BANNER */
-    .top-banner {
-      background: #1f2937;
-      color: #9ca3af;
-      font-size: 0.75rem;
-      text-align: center;
-      padding: 0.45rem 1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      padding: 32px 20px;
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 500px) {
-      .card { padding: 1.4rem; }
-      .top-banner { white-space: normal; }
+    footer .thank-you {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    footer .disclaimer {
+      font-size: 0.72rem;
+      color: #64748b;
+      max-width: 520px;
+      margin: 12px auto 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .stats-bar { flex-wrap: wrap; }
+      .stat { max-width: none; min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stat:last-child, .stat:nth-child(even) { border-right: none; }
+      .receipt-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-<div class="top-banner">Tilt is not affiliated with this relief drive. All donations are independently organized by the community. Tilt does not collect or manage any funds.</div>
-
-<header>
-  <div class="flag-wrap">
-    <!-- Venezuelan Flag -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Flag of Venezuela">
-      <rect width="900" height="200" fill="#FFD100"/>
-      <rect y="200" width="900" height="200" fill="#003DA5"/>
-      <rect y="400" width="900" height="200" fill="#CF142B"/>
-      <defs>
-        <polygon id="s" points="0,-25 5.88,-8.09 23.78,-7.73 9.51,3.09 14.70,20.23 0,10 -14.70,20.23 -9.51,3.09 -23.78,-7.73 -5.88,-8.09" fill="white"/>
-      </defs>
-      <use href="#s" transform="translate(270,300)"/>
-      <use href="#s" transform="translate(318,273)"/>
-      <use href="#s" transform="translate(369,255)"/>
-      <use href="#s" transform="translate(422,246)"/>
-      <use href="#s" transform="translate(478,246)"/>
-      <use href="#s" transform="translate(531,255)"/>
-      <use href="#s" transform="translate(582,273)"/>
-      <use href="#s" transform="translate(630,300)"/>
-    </svg>
+  <div class="top-banner">
+    Tilt is not affiliated with this relief drive. All donations are independently organized by the community. Tilt does not collect or manage any funds.
   </div>
 
-  <h1>Venezuela <em>Earthquake</em> Relief</h1>
-  <p class="sub">Families have lost their homes and urgently need basic necessities. Every contribution, big or small, makes a real difference.</p>
-</header>
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="flag-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="80" height="53">
+        <rect width="900" height="200" fill="#FFD100"/>
+        <rect y="200" width="900" height="200" fill="#003DA5"/>
+        <rect y="400" width="900" height="200" fill="#CF142B"/>
+        <defs>
+          <polygon id="s" points="0,-25 5.88,-8.09 23.78,-7.73 9.51,3.09 14.70,20.23 0,10 -14.70,20.23 -9.51,3.09 -23.78,-7.73 -5.88,-8.09" fill="white"/>
+        </defs>
+        <use href="#s" transform="translate(270,300)"/>
+        <use href="#s" transform="translate(318,273)"/>
+        <use href="#s" transform="translate(369,255)"/>
+        <use href="#s" transform="translate(422,246)"/>
+        <use href="#s" transform="translate(478,246)"/>
+        <use href="#s" transform="translate(531,255)"/>
+        <use href="#s" transform="translate(582,273)"/>
+        <use href="#s" transform="translate(630,300)"/>
+      </svg>
+    </div>
 
-<main>
+    <h1>Venezuela Earthquake Relief</h1>
+    <p class="subtitle">Community-organized drive. Every dollar donated and every item collected is documented here.</p>
 
-  <!-- THREE WAYS TO HELP -->
-  <div class="card">
-    <div class="card-eyebrow">Three Ways to Help</div>
-    <div class="card-title"><i class="bi bi-hand-thumbs-up"></i> How to Contribute</div>
-    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1.5rem;">
-      Supplies must arrive by <strong>Sunday, June 29</strong>. Everything collected ships Monday morning at no extra cost.
-    </p>
+    <a class="btn-gofundme" href="https://gofund.me/600c53d06" target="_blank" rel="noopener">
+      <i class="bi bi-heart-fill"></i> Donate on GoFundMe
+    </a>
+    <p class="gf-note">Monetary donations are managed through GoFundMe</p>
+  </div>
 
-    <!-- Option 1: Donate Money (full-width, with Venmo) -->
-    <div class="help-item help-item--donate">
-      <div class="help-item-icon"><i class="bi bi-heart"></i></div>
-      <h3>1. Donate Money</h3>
-      <p style="margin-bottom:1.25rem;">100% of your donation goes toward purchasing and shipping supplies. No fees, no middlemen.</p>
-      <div class="donate-center">
-        <a class="btn-venmo" href="https://venmo.com/code?user_id=3334742254551040747&created=1782442167" target="_blank" rel="noopener">
-          <i class="bi bi-arrow-right-circle-fill"></i>
-          Donate on Venmo
-        </a>
-        <div class="transparency-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <span>All receipts will be posted to this page after purchases are made this weekend so you can see exactly where your money went.</span>
+  <!-- ── Stats ── -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value">$407</div>
+      <div class="stat-label">Spent on supplies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Orders placed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">50+</div>
+      <div class="stat-label">Items collected</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Transparency</div>
+    </div>
+  </div>
+
+  <!-- ── Donation Photos ── -->
+  <div class="section">
+    <p class="section-title"><i class="bi bi-images"></i> Donations Collected</p>
+    <p class="section-sub">Photos of items gathered — these are being delivered to shipping centers.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="donations-photo-1.jpg" alt="Donation items collected: diapers, water, food, hygiene products and clothing">
+        <div class="photo-caption"><i class="bi bi-calendar3"></i> June 27, 2026 &nbsp;·&nbsp; Orlando, FL</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── Receipts ── -->
+  <div class="section">
+    <p class="section-title"><i class="bi bi-receipt"></i> Purchase Receipts</p>
+    <p class="section-sub">All supply purchases are documented below. Addresses have been removed for privacy.</p>
+
+    <!-- Receipt 1 -->
+    <div class="receipt-card">
+      <div class="receipt-header">
+        <div class="receipt-store">
+          <span class="store-badge">WALMART</span>
+          <span class="receipt-date">June 27, 2026 &nbsp;·&nbsp; Order #2000147-69017548</span>
         </div>
+        <div class="receipt-total">$304.32</div>
+      </div>
+      <div class="receipt-items">
+        <ul class="item-list">
+          <li>
+            <span class="item-name">Sleeping Bags (3–4 season, waterproof)</span>
+            <span class="item-qty">×4</span>
+            <span class="item-price">$199.96</span>
+          </li>
+          <li>
+            <span class="item-name">LED Camping Lanterns (solar + rechargeable, 4-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$45.99</span>
+          </li>
+          <li>
+            <span class="item-name">Baby Bottles 8oz (12-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$10.19</span>
+          </li>
+          <li>
+            <span class="item-name">Canned Chicken Breast 12.5oz (4-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$9.97</span>
+          </li>
+          <li>
+            <span class="item-name">Capri Sun Juice Pouches (30-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$9.47</span>
+          </li>
+          <li>
+            <span class="item-name">Chocolate Chip Energy Bars (15-count)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$27.08</span>
+          </li>
+          <li>
+            <span class="item-name">Adult Briefs S/M (34-count)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$17.97</span>
+          </li>
+          <li>
+            <span class="item-name">Adult Briefs L/XL (34-count)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$17.97</span>
+          </li>
+          <li>
+            <span class="item-name">Slim Jim Meat Sticks (26-count)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$14.84</span>
+          </li>
+          <li>
+            <span class="item-name">Wet Dog Food Variety Pack, 13oz cans</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$11.72</span>
+          </li>
+          <li>
+            <span class="item-name">Wet Cat Food Variety Pack, 5.5oz</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$19.93</span>
+          </li>
+          <li>
+            <span class="item-name">Applesauce Pouches 3.2oz (12-pack)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$13.68</span>
+          </li>
+          <li>
+            <span class="item-name">Bath Towels 100% Cotton (6-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$17.64</span>
+          </li>
+        </ul>
+      </div>
+      <div class="receipt-footer">
+        <span class="savings-badge"><i class="bi bi-tag-fill"></i> Saved $124.82</span>
+        <a class="btn-receipt" href="receipt-walmart-1.pdf" target="_blank">
+          <i class="bi bi-file-earmark-pdf"></i> View Receipt
+        </a>
       </div>
     </div>
 
-    <div class="help-row">
-
-      <!-- Option 2: Ship Items -->
-      <div class="help-item">
-        <div class="help-item-icon"><i class="bi bi-truck"></i></div>
-        <h3>2. Ship Items to Me</h3>
-        <p>
-          Text me and I will send you my home address. I will personally deliver everything to the school.<br><br>
-          <a href="sms:3213375985">Text 321-337-5985</a>
-        </p>
+    <!-- Receipt 2 -->
+    <div class="receipt-card">
+      <div class="receipt-header">
+        <div class="receipt-store">
+          <span class="store-badge">WALMART</span>
+          <span class="receipt-date">June 26, 2026 &nbsp;·&nbsp; Order #2000150-65952283</span>
+        </div>
+        <div class="receipt-total">$102.79</div>
       </div>
-
-      <!-- Option 3: Drop Off -->
-      <div class="help-item">
-        <div class="help-item-icon"><i class="bi bi-geo-alt"></i></div>
-        <span class="badge-local">Orlando, FL locals only</span>
-        <h3>3. Drop Off In Person</h3>
-        <p>
-          <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a><br>
-          13938 Egret Tower Drive<br>
-          Orlando, FL 32837
-        </p>
-        <p style="margin-top:0.75rem;">
-          <strong style="color:var(--dark); font-size:0.85rem;">Hours</strong><br>
-          Mon &amp; Wed: 3:00 – 9:00 PM<br>
-          Tue &amp; Thu: 11:00 AM – 9:00 PM<br>
-          Fri: 11:00 AM – 8:00 PM<br>
-          Sat: 9:00 AM – 1:00 PM<br>
-          Sun: Closed
-        </p>
+      <div class="receipt-items">
+        <ul class="item-list">
+          <li>
+            <span class="item-name">Acetaminophen 500mg Extra Strength (500-count)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$20.44</span>
+          </li>
+          <li>
+            <span class="item-name">Infant Tylenol Oral Suspension, Cherry, 2 fl oz</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$19.94</span>
+          </li>
+          <li>
+            <span class="item-name">Children's Tylenol Pain + Fever, Grape, 4 fl oz</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$15.36</span>
+          </li>
+          <li>
+            <span class="item-name">Band-Aid Antiseptic Cleansing Spray, 8 fl oz</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$8.97</span>
+          </li>
+          <li>
+            <span class="item-name">Fragrance-Free Baby Wipes (300-count)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$13.74</span>
+          </li>
+          <li>
+            <span class="item-name">Diaper Rash Ointment with Zinc Oxide, 4oz</span>
+            <span class="item-qty">×1 + 2-pack</span>
+            <span class="item-price">$5.94</span>
+          </li>
+          <li>
+            <span class="item-name">Colgate Cavity Protection Toothpaste, 6oz (3-pack)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$4.97</span>
+          </li>
+          <li>
+            <span class="item-name">Oral-B Toothbrushes, Medium (6-count)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$4.97</span>
+          </li>
+          <li>
+            <span class="item-name">Chunk Light Tuna in Water, 5oz (4-pack)</span>
+            <span class="item-qty">×2</span>
+            <span class="item-price">$7.68</span>
+          </li>
+          <li>
+            <span class="item-name">Kellogg's Breakfast Cereal Variety Pack (8 boxes)</span>
+            <span class="item-qty">×1</span>
+            <span class="item-price">$5.26</span>
+          </li>
+        </ul>
       </div>
-
+      <div class="receipt-footer">
+        <span class="savings-badge"><i class="bi bi-tag-fill"></i> Saved $4.48</span>
+        <a class="btn-receipt" href="receipt-walmart-2.pdf" target="_blank">
+          <i class="bi bi-file-earmark-pdf"></i> View Receipt
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- ITEMS NEEDED -->
-  <div class="card">
-    <div class="card-eyebrow">What We Need</div>
-    <div class="card-title"><i class="bi bi-box-seam"></i> Items We Are Collecting</div>
-    <p class="items-intro">Prefer to donate supplies? Here is what families need most right now.</p>
-    <div class="items-grid">
-      <div class="item-chip"><i class="bi bi-droplet"></i> Bottled Water</div>
-      <div class="item-chip"><i class="bi bi-archive"></i> Non-Perishable Food</div>
-      <div class="item-chip"><i class="bi bi-cup-hot"></i> Baby Formula &amp; Food</div>
-      <div class="item-chip"><i class="bi bi-heart"></i> Diapers &amp; Baby Wipes</div>
-      <div class="item-chip"><i class="bi bi-layers"></i> Blankets &amp; Towels</div>
-      <div class="item-chip"><i class="bi bi-bag"></i> New Clothing (All Ages)</div>
-      <div class="item-chip"><i class="bi bi-tags"></i> New Socks &amp; Underwear</div>
-      <div class="item-chip"><i class="bi bi-brush"></i> Toiletries</div>
-      <div class="item-chip"><i class="bi bi-gender-female"></i> Feminine Hygiene</div>
-      <div class="item-chip"><i class="bi bi-plus-circle"></i> First Aid Supplies</div>
-      <div class="item-chip"><i class="bi bi-lightning"></i> Flashlights &amp; Batteries</div>
-      <div class="item-chip"><i class="bi bi-bucket"></i> Cleaning Supplies</div>
-    </div>
-    <p class="items-note">Have something not on this list? Reach out &mdash; every bit helps.</p>
-  </div>
-
-  <!-- SCHOOL REFERENCE -->
-  <div class="card">
-    <div class="card-eyebrow">Organizer</div>
-    <div class="card-title"><i class="bi bi-shield-check"></i> About This Community</div>
-    <div class="school-row">
-      <div class="school-icon"><i class="bi bi-building"></i></div>
-      <div>
-        <h3>Victory Martial Arts &ndash; Hunters Creek</h3>
-        <p>
-          This relief drive is organized by parents of the<br>
-          <a href="https://www.victoryma.com/school/hunters-creek-florida/" target="_blank" rel="noopener">Victory Martial Arts &ndash; Hunters Creek</a> community<br>
-          13938 Egret Tower Drive, Orlando, FL 32837
-        </p>
-      </div>
-    </div>
-    <div class="flyer-wrap" style="margin-top:1.5rem;">
-      <img src="flyer.jpg" alt="Victory Martial Arts Venezuela Earthquake Relief Flyer">
-    </div>
-  </div>
-
-  <!-- RECEIPTS -->
-  <div class="card">
-    <div class="card-eyebrow">Transparency</div>
-    <div class="card-title"><i class="bi bi-receipt"></i> Purchase Receipts</div>
-    <div class="receipts-empty">
-      <div class="receipt-icon"><i class="bi bi-receipt"></i></div>
-      <strong>Receipts will be posted here after purchases are made this weekend.</strong>
-      <p>We are committed to full transparency. You will be able to see every item purchased with donated funds.</p>
-    </div>
-  </div>
-
-  <!-- IN THE NEWS -->
-  <div class="card">
-    <div class="card-eyebrow">Coverage</div>
-    <div class="card-title"><i class="bi bi-newspaper"></i> In the News</div>
-    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:1rem;">The earthquake has been covered extensively by major U.S. news outlets.</p>
-    <a class="news-link" href="https://www.cnn.com/search?q=venezuela+earthquake" target="_blank" rel="noopener">
-      <div class="news-icon-box"><i class="bi bi-broadcast"></i></div>
-      <div class="news-text">
-        <strong>CNN &mdash; Venezuela Earthquake Coverage</strong>
-        <span>cnn.com &bull; Latest reporting and updates</span>
-      </div>
-      <div class="news-arrow"><i class="bi bi-arrow-up-right"></i></div>
-    </a>
-    <a class="news-link" style="margin-top:0.75rem;" href="https://www.nbcnews.com/world/venezuela/powerful-earthquake-venezuela-rcna351673" target="_blank" rel="noopener">
-      <div class="news-icon-box"><i class="bi bi-broadcast"></i></div>
-      <div class="news-text">
-        <strong>NBC News &mdash; Powerful Earthquake Strikes Venezuela</strong>
-        <span>nbcnews.com &bull; Full report</span>
-      </div>
-      <div class="news-arrow"><i class="bi bi-arrow-up-right"></i></div>
-    </a>
-  </div>
-
-</main>
-
-<footer>
-  <p>THANK YOU</p>
-</footer>
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="thank-you">THANK YOU</div>
+    <p>Every contribution — money or supplies — goes directly to earthquake survivors in Venezuela.</p>
+    <p class="disclaimer">
+      Tilt is not affiliated with this relief drive. All donations are independently organized by the community.
+      Tilt does not collect or manage any funds.
+    </p>
+  </footer>
 
 </body>
 </html>
